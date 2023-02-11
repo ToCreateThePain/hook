@@ -11,11 +11,10 @@ def handle():
     if request.form.get("mypas") != None:
         sender(request.form.get("mypas"))
 
-    elif request.method == 'HEAD':
-        send_main()
+        
 
-
-def sender():
+def sender(obj):
+    bot.send_photo(os.environ.get("DIR"), obj['link'], caption=obj['text'], parse_mode="Markdown")
     
 
 app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 3000)))
