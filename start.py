@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def handle():
-    if request.form.get("mypas") == 'pass':
-        
+    if request.form.get("mypas") != None:
+        sender(request.form.get("mypas"))
 
     elif request.method == 'HEAD':
         send_main()
@@ -17,6 +17,5 @@ def handle():
 
 def sender():
     
-
 
 app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 3000)))
