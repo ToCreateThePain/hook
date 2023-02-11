@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, request, Response
+from flask import Flask, request
 import telebot
 bot = telebot.TeleBot(os.environ.get("TOKEN"))
 app = Flask(__name__)
